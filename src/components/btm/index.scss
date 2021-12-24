@@ -1,0 +1,38 @@
+.gtd-btm-1 {
+  background: #022b34 !important;
+  overflow: hidden;
+  &:before {
+    display: none;
+  }
+  &:after {
+    @include shape-bottom-middle(#00262e);
+  }
+  .deco {
+    &:before {
+      content: url("../img/btm/path-2.png");
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    &:after {
+      content: url("../img/btm/asset-1-bg-1-1.png");
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  h1 {
+    margin-top: 20px;
+  }
+  h2 {
+    margin-top: 65px;
+    font-size: 40px;
+    color: $extra;
+    span {
+      font-size: 20px;
+      color: $white;
+      display: block;
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.gtd {
+  &__section {
+    padding: 40px 0;
+    position: relative;
+  }
+  &__title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    &--white {
+      color: $white;
+    }
+    &--arrow {
+      &:before {
+        content: url("../img/arrow-icon.png");
+        margin-right: 16px;
+      }
+      &:after {
+        content: url("../img/arrow-icon.png");
+        margin-left: 16px;
+      }
+    }
+  }
+  &__button {
+    padding: 10px 21.4px 10px 23px;
+    border-radius: 8px;
+    display: inline-block;
+    border: solid 1px $extra;
+    background: $extra;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $text;
+    transition: 0.5s all;
+    &:hover {
+      background: none;
+    }
+  }
+  @media (max-width: 1025px) {
+    &__title {
+      font-size: 24px;
+      &--arrow {
+        &:before,
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+.text-white {
+  color: $white;
+}
+
+.text-normal {
+  color: $text;
+}
+
+.w-full {
+  width: 100%;
+}
+.h-full {
+  height: 100%;
+}
+.radius-full {
+  border-radius: 100%;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.align-items-center {
+  align-items: center;
+}

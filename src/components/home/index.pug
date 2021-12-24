@@ -1,0 +1,105 @@
+.gtd__section.gtd-home-1.text-white
+    .container 
+        .content
+            .row 
+                .col-lg-6 
+                    .section__content
+                        h1.gtd__title Gotadi cho doanh nghiệp
+                        p.section__description Gotadi cho doanh nghiệp là nhóm giải pháp sản phẩm dành cho nhóm Doanh nghiệp phục vụ nhu cầu công tác, nghỉ dưỡng & hoạt động đội nhóm dành cho các doanh nghiệp từ nhỏ đến lớn
+                .col-lg-6 
+                    .section__video.cursor-pointer
+                        span.video__preview
+                            img.w-full(src="./img/home/video.png", alt="")
+                        span.video__icon.radius-full
+                            img(src="./img/icon-play.png", alt="")
+.gtd__section.gtd-home-2.text-white
+    .container 
+        h2.gtd__title.gtd__title--arrow.text-center Giải pháp & sản phẩm 
+            br.mobile
+            | của chúng tôi
+        .content
+            .accordion.mobile
+                .accordion__item
+                    img(src="./img/home/luggage@3x.png", alt="")
+                .accordion__item
+                    img(src="./img/home/international-business@3x.png", alt="")
+                .accordion__item
+                    img(src="./img/home/tour-guide@3x.png", alt="")
+                .accordion__item
+                    img(src="./img/home/check-in-desk@3x.png", alt="")
+            .accordion__content
+                .row
+                    -for(i=0;i<4;i++)
+                        .col-lg-3 
+                            .content__item
+                                .content__img 
+                                    img.w-full(src="./img/home/bitmap1.png", alt="")
+                                h3.content__title.text-center GOTADI BTM
+                                p.content__description.text-justify Giúp tiết kiệm chi phí, thời gian và nguồn nhân lực trong quản lý công tác, cải thiện trải nghiệm đặt chuyến công tác dựa trên nền tảng Công nghệ vượt trội duy nhất.
+                                a(href="#").gtd__button.mobile Xem thêm 
+
+.gtd__section.gtd-home-3.text-white
+    .container 
+        h2.gtd__title.gtd__title--arrow.text-center Dịch vụ của chúng tôi
+        .content
+            .row 
+                -for(i=0;i<4;i++)
+                    .col-6.col-lg-3 
+                        .content__item
+                            .content__number 
+                                span +1000
+                            h3.content__title.text-center HỆ THỐNG API KHÁCH SẠN & VÉ MÁY BAY
+                            p.content__description.text-center Giúp tiết kiệm chi phí, thời gian và nguồn nhân lực trong quản lý công tác, cải thiện trải nghiệm đặt chuyến công tác dựa trên nền tảng Công nghệ vượt trội duy nhất.
+.gtd__section.gtd-home-4
+    .container 
+        h2.gtd__title.gtd__title--arrow.text-center Khách hàng của chúng tôi
+        .content
+            .row 
+                .col-lg-6 
+                    .partner
+                        -for(i=0;i<17;i++)
+                            .partner__item 
+                                img(src="./img/home/partner"+(i+1)+".png", alt="")
+                .col-lg-6 
+                    .review 
+                        .review__icon 
+                            img(src="./img/home/quote.png", alt="")
+                        p.review__description.text-justify Chúng tôi đánh giá rất cao dịch vụ của Gotadi vì thế có một niềm tin nhất định với Hệ thống Gotadi BTM vừa ra đời. Nhân viên của chúng tôi có thể tự truy cập vào Gotadi BTM đề tạo và quản lý các chuyến công tác bất kể thời gian nào theo lịch trình phù hợp nhất, đặc biệt là các chuyến công tác gấp.
+                        .review__customer.customer
+                            h3.customer__name Ông TRẦN NHẤT MINH
+                                br
+                                | Phó TGĐ Ngân Hàng Quốc Tế VIB
+                            .customer__avatar 
+                                img(src="./img/home/customer.png", alt="")
+.gtd__section.gtd-home-5.text-white
+    .container
+        h2.gtd__title.gtd__title--arrow.text-center Liên hệ với chúng tôi
+        .content 
+            .contact 
+                .row.justify-content-center
+                    -for(i=0;i<4;i++)
+                        .col-md-6.col-lg-3 
+                            .contact__item 
+                                h3.contact__name.text-center GOTADI BTM
+                                p.contact__info
+                                    img.contact__icon(src="./img/home/icon-phone@3x.png", alt="")
+                                    span 0909 123456
+                                p.contact__info
+                                    img.contact__icon(src="./img/home/icon-mail@3x.png", alt="")
+                                    span btm-test@gmail.com
+                    .col-md-8.col-lg-6 
+                        .contact__form.text-normal
+                            h4.text-center Để lại thông tin để được tư vấn giải pháp & sản phẩm Gotadi Doanh nghiệp 
+                            form
+                                .contact__input 
+                                    input(type="text" placeholder="Người liên hệ")
+                                .contact__input 
+                                    input(type="text" placeholder="Email liên hệ")
+                                .contact__input 
+                                    input(type="text" placeholder="Điện thoại liên hệ")
+                                .contact__input 
+                                    input(type="text" placeholder="Tên Doanh nghiệp")
+                                .contact__button 
+                                    button(type='button') Yêu cầu tư vấn 
+                .contact__button.text-center.mobile
+                    a(href="#").gtd__button Yêu cầu tư vấn

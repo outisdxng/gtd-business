@@ -1,0 +1,107 @@
+@function r($size) {
+  @return ($size/16px) * 1rem;
+}
+
+@mixin line($line) {
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+@mixin bg-img($bg) {
+  background: url($bg);
+  background-size: cover;
+  background-position: center center;
+}
+@mixin shape-bottom-right($color) {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  box-shadow: -20px 500px 0 500px $color;
+  border-bottom-right-radius: 80%;
+  width: 100vw;
+  height: 100%;
+  height: 350px;
+  content: "";
+  pointer-events: none;
+}
+
+@mixin shape-top-left($color) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-shadow: 0 500px 0 0 $color inset;
+  border-bottom-left-radius: 80%;
+  width: 100vw;
+  height: 100%;
+  height: 350px;
+  content: "";
+  pointer-events: none;
+}
+
+@mixin shape-bottom-middle($color) {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  box-shadow: 0 500px 0 500px $color;
+  border-radius: 100%;
+  width: 120%;
+  height: 100%;
+  transform: translateX(-50%);
+  height: 500px;
+  pointer-events: none;
+  content: "";
+}
+
+@mixin mdi($content) {
+  content: $content;
+  font-size: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+  text-rendering: auto;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Material Design Icons";
+}
+@mixin lnr($content) {
+  content: $content;
+  speak: none;
+  line-height: 1;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Linearicons-Free";
+}
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin wh($size) {
+  width: $size;
+  height: $size;
+}
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  line-height: $size;
+  text-align: center;
+  border-radius: 50%;
+}
+
+// button
+@mixin button($bg) {
+  background: $bg;
+  &:hover {
+    background: darken($bg, 8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background: darken($bg, 25%);
+  }
+}
