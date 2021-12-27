@@ -463,8 +463,4 @@
   margin-top: -115px;
   z-index: 4;
   padding-top: 180px;
-  &:after {
-    @include shape-bottom-center(#fff);
-    bottom: 250px;
-  }
 }

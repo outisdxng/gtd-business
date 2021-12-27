@@ -315,6 +315,12 @@
   h2 {
     margin-bottom: 48px;
   }
+  &:not(.gtd-home-5) {
+    &:after {
+      @include shape-bottom-center(#fff);
+      bottom: 250px;
+    }
+  }
   .content {
     position: relative;
     z-index: 5;
