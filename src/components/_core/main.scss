@@ -5,19 +5,22 @@
   }
   &__title {
     font-size: 40px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 20px;
     &--white {
       color: $white;
     }
     &--arrow {
+      display: flex;
       &:before {
         content: url("../img/arrow-icon.png");
         margin-right: 16px;
+        line-height: 55px;
       }
       &:after {
         content: url("../img/arrow-icon.png");
         margin-left: 16px;
+        line-height: 55px;
       }
     }
   }
@@ -54,7 +57,9 @@
 .text-normal {
   color: $text;
 }
-
+.d-flex {
+  display: flex;
+}
 .w-full {
   width: 100%;
 }

@@ -58,6 +58,21 @@ function homeAccordion() {
   $(".gtd-home-2 .accordion__item").first().trigger("click");
 }
 
+function equalHeightElement(el) {
+  let height = 0;
+  let thisHeight = 0;
+  $(el).each(function () {
+    thisHeight = $(this).height();
+    if (thisHeight > height) {
+      height = thisHeight;
+    }
+  });
+  if (window.matchMedia("(min-width: 1025px)").matches) {
+    $(el).height(height);
+  } else {
+    $(el).height("100px");
+  }
+}
 $(document).ready(function () {
   mobileMenuToggle();
   scrollToActiveHeader();
@@ -65,6 +80,8 @@ $(document).ready(function () {
   mobileMappingListener();
   mobileDropdown();
   homeAccordion();
+  equalHeightElement(".gtd-btm-2 .content__item h4");
+  equalHeightElement(".gtd-btm-3 .solution__text");
 });
 
 $(window).on("scroll", function () {

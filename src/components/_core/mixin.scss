@@ -40,16 +40,31 @@
   pointer-events: none;
 }
 
-@mixin shape-bottom-middle($color) {
+@mixin shape-bottom-center($color) {
   position: absolute;
   bottom: 0;
   left: 50%;
-  box-shadow: 0 500px 0 500px $color;
+  box-shadow: 0 500px 0 400px $color;
   border-radius: 100%;
   width: 120%;
   height: 100%;
   transform: translateX(-50%);
   height: 500px;
+  pointer-events: none;
+  content: "";
+}
+
+@mixin shape-top-center($color) {
+  position: absolute;
+  top: -385px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 500px; /* as the half of the width */
+  background-color: $color;
+  border-bottom-left-radius: 100%; /* 100px of height + 10px of border */
+  border-bottom-right-radius: 100%; /* 100px of height + 10px of border */
+  border-bottom: 0;
   pointer-events: none;
   content: "";
 }

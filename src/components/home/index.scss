@@ -294,17 +294,26 @@
   }
 }
 
-.gtd-home-5 {
-  margin-top: -250px;
+.gtd__contact {
   padding-bottom: 0;
-  padding-top: 400px;
+  overflow: hidden;
   @include bg-img("../img/home/background_05-g@3x.png");
-  &:before {
-    @include shape-top-left($white);
+  // &:before {
+  //   @include shape-top-center(#fff);
+  // }
+  &.gtd-home-5 {
+    margin-top: -250px;
+    padding-top: 400px;
+    &:before {
+      @include shape-top-left($white);
+    }
+    &:after {
+      @include shape-bottom-right($white);
+      bottom: 225px;
+    }
   }
-  &:after {
-    @include shape-bottom-right($white);
-    bottom: 225px;
+  h2 {
+    margin-bottom: 48px;
   }
   .content {
     position: relative;
