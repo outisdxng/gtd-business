@@ -131,6 +131,16 @@ $(document).ready(function () {
   caseStudyScrollListener();
   equalHeightElement(".gtd-btm-2 .content__item h4");
   equalHeightElement(".gtd-btm-3 .solution__text");
+
+  let customerReviewSlider = new Swiper(".gtd-home-4 .swiper-container", {
+    slidesPerView: 1,
+    speed: 1000,
+    loop: true,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 5000,
+    },
+  });
 });
 
 $(window).on("scroll", function () {
