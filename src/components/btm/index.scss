@@ -165,7 +165,7 @@
   @media (max-width: 1025px) {
     padding: 32px 0;
     &:after {
-      display: none;
+      display: none !important;
     }
     .content {
       &__item {

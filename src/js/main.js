@@ -28,18 +28,29 @@ function scrollToActiveHeader() {
 }
 
 function mobileDropdown() {
-  $(".header .has-dropdown .icon-dropdown").on("click", function (e) {
-    const dropdown = $(this).siblings(".dropdown");
-    const hasDropdown = $(this).parents(".has-dropdown");
-    if (dropdown.is(":hidden")) {
-      $(".header .dropdown").slideUp();
-      $(".header .has-dropdown").removeClass("active");
-      hasDropdown.addClass("active");
-      dropdown.slideDown();
-    } else {
-      hasDropdown.removeClass("active");
-      dropdown.slideUp();
+  $(document).on(
+    "click",
+    ".header .menu-item-has-children .icon-dropdown",
+    function (e) {
+      const dropdown = $(this).siblings(".sub-menu");
+      const hasDropdown = $(this).parents(".menu-item-has-children");
+      if (dropdown.is(":hidden")) {
+        $(".header .sub-menu").slideUp();
+        $(".header .menu-item-has-children").removeClass("current_page_item");
+        hasDropdown.addClass("current_page_item");
+        dropdown.slideDown();
+      } else {
+        hasDropdown.removeClass("current_page_item");
+        dropdown.slideUp();
+      }
     }
+  );
+}
+
+function addIconToHasSubItem() {
+  $(".header .menu-item-has-children").each(function () {
+    $(this).find(".sub-menu").before(`<span class="icon-dropdown"></span>`);
+    console.log($(this));
   });
 }
 
@@ -83,10 +94,11 @@ function equalHeightElement(el) {
 function caseStudyScrollToSection() {
   $(".gtd-case-study-1 .navigation__item").on("click", function () {
     const idx = $(this).index();
-    const offset = $(".gtd-case-study-1 .content__item").eq(idx).length
-      ? $(".gtd-case-study-1 .content__item").eq(idx).offset().top
+    const offset = $(".gtd-case-study-1 h2").eq(idx).length
+      ? $(".gtd-case-study-1 h2").eq(idx).offset().top
       : null;
-    const heightDismiss = $(window).height() / 5;
+    // const heightDismiss = $(window).height() / 5;
+    const heightDismiss = 30;
     const menuHeight = $(".header").height();
     if (offset) {
       $("body, html").animate(
@@ -102,10 +114,11 @@ function caseStudyScrollToSection() {
 function caseStudyScrollListener() {
   if ($(".gtd-case-study-1 .navigation").length) {
     $(".gtd-case-study-1 .navigation__item").each(function (idx) {
-      const offset = $(".gtd-case-study-1 .content__item").eq(idx).length
-        ? $(".gtd-case-study-1 .content__item").eq(idx).offset().top
+      const offset = $(".gtd-case-study-1 h2").eq(idx).length
+        ? $(".gtd-case-study-1 h2").eq(idx).offset().top
         : null;
-      const heightDismiss = $(window).height() / 5;
+      // const heightDismiss = $(window).height() / 5;
+      const heightDismiss = 30;
       const menuHeight = $(".header").height();
 
       if (
@@ -123,6 +136,7 @@ $(document).ready(function () {
   initLazyload();
   mobileMenuToggle();
   scrollToActiveHeader();
+  addIconToHasSubItem();
   languageToggle();
   mobileMappingListener();
   mobileDropdown();

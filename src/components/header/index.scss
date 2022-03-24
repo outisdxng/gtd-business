@@ -36,7 +36,7 @@
     }
   }
   &__pages {
-    & > ul {
+    ul {
       display: flex;
       li {
         a {
@@ -48,9 +48,9 @@
             padding: 15px 10px;
           }
         }
-        &.has-dropdown {
+        &.menu-item-has-children {
           position: relative;
-          & > a {
+          a {
             &::after {
               margin-left: 5px;
               font-size: 12px;
@@ -58,13 +58,13 @@
             }
           }
           &:hover {
-            .dropdown {
+            .sub-menu {
               opacity: 1;
               pointer-events: initial;
             }
           }
         }
-        .dropdown {
+        .sub-menu {
           position: absolute;
           top: 100%;
           padding: 10px 0;
@@ -75,14 +75,21 @@
           opacity: 0;
           transition: 0.5s all;
           border: 1px solid $extra;
+          display: block;
           pointer-events: none;
+          @media (min-width: 1025px) {
+            display: block !important;
+          }
           a {
             padding: 5px 16px;
             white-space: nowrap;
+            &:after {
+              display: none;
+            }
           }
         }
         &:hover,
-        &.active {
+        &.current_page_item {
           & > a {
             color: $extra;
           }
@@ -214,11 +221,11 @@
       width: 100%;
       transition: 0.5s all;
       .header__pages {
-        & > ul {
+        ul {
           display: block;
-          & > li {
+          li {
             border-bottom: 1px solid #cfcece;
-            & > a {
+            a {
               font-size: 20px;
               font-weight: 600;
               text-transform: uppercase;
@@ -229,12 +236,12 @@
                 color: inherit;
               }
             }
-            &.active {
+            &.current_page_item {
               background: $main;
               color: $extra;
             }
-            &.has-dropdown {
-              & > a {
+            &.menu-item-has-children {
+              a {
                 &:after {
                   display: none;
                   // @include mdi("\F0415");
@@ -250,7 +257,7 @@
                 @include mdi("\F0415");
               }
             }
-            .dropdown {
+            .sub-menu {
               display: none;
               position: relative;
               top: auto;
@@ -263,12 +270,12 @@
               transition: none;
               border-radius: 0;
               background: $footer;
-              &__item {
+              li {
                 a {
                   font-size: 16px;
                   padding: 10px 16px;
                 }
-                & + .dropdown__item {
+                & + li {
                   border-top: 1px solid #cfcece;
                 }
                 // &:first-child {
